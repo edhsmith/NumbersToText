@@ -1,4 +1,6 @@
 # NumbersToText
+To run this application open the AKQN.sln solution File.
+Select WebApp project as the Startup Project and Press F5 or Ctrl + F5 .
 
 <b>Architecture</b>
 <p>This project is developed using MVC pattern. <br/>
