@@ -39,7 +39,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("100");
             var value = obj.ToString();
 
-            Assert.AreEqual("ONE HUNDRED", value);
+            Assert.AreEqual("ONE HUNDRED DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -48,7 +48,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("377");
             var value = obj.ToString();
 
-            Assert.AreEqual("THREE HUNDRED AND SEVENTY-SEVEN", value);
+            Assert.AreEqual("THREE HUNDRED AND SEVENTY-SEVEN DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -57,7 +57,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("1000");
             var value = obj.ToString();
 
-            Assert.AreEqual("ONE THOUSAND", value);
+            Assert.AreEqual("ONE THOUSAND DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("7725");
             var value = obj.ToString();
 
-            Assert.AreEqual("SEVEN THOUSAND SEVEN HUNDRED AND TWENTY-FIVE", value);
+            Assert.AreEqual("SEVEN THOUSAND SEVEN HUNDRED AND TWENTY-FIVE DOLLARS AND ZERO CENT.", value);
         }
 
 
@@ -76,7 +76,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("100000");
             var value = obj.ToString();
 
-            Assert.AreEqual("ONE HUNDRED THOUSAND", value);
+            Assert.AreEqual("ONE HUNDRED THOUSAND DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("265952");
             var value = obj.ToString();
 
-            Assert.AreEqual("TWO HUNDRED AND SIXTY-FIVE THOUSAND NINE HUNDRED AND FIFTY-TWO", value);
+            Assert.AreEqual("TWO HUNDRED AND SIXTY-FIVE THOUSAND NINE HUNDRED AND FIFTY-TWO DOLLARS AND ZERO CENT.", value);
         }
 
 
@@ -95,7 +95,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("1000000");
             var value = obj.ToString();
 
-            Assert.AreEqual("ONE MILLION", value);
+            Assert.AreEqual("ONE MILLION DOLLARS AND ZERO CENT.", value);
         }
 
 
@@ -105,7 +105,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("1275490");
             var value = obj.ToString();
 
-            Assert.AreEqual("ONE MILLION TWO HUNDRED AND SEVENTY-FIVE THOUSAND FOUR HUNDRED AND NINETY", value);
+            Assert.AreEqual("ONE MILLION TWO HUNDRED AND SEVENTY-FIVE THOUSAND FOUR HUNDRED AND NINETY DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -114,7 +114,7 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("17");
             var value = obj.ToString();
 
-            Assert.AreEqual("SEVENTEEN", value);
+            Assert.AreEqual("SEVENTEEN DOLLARS AND ZERO CENT.", value);
         }
 
         [TestMethod]
@@ -123,7 +123,45 @@ namespace AKQA.Test
             var obj = BL.Numbers.Convert<string>("31");
             var value = obj.ToString();
 
-            Assert.AreEqual("THIRTY-ONE", value);
+            Assert.AreEqual("THIRTY-ONE DOLLARS AND ZERO CENT.", value);
         }
+
+        [TestMethod]
+        public void ZeroToText()
+        {
+            var obj = BL.Numbers.Convert<string>("0");
+            var value = obj.ToString();
+
+            Assert.AreEqual("ZERO DOLLAR AND ZERO CENT.", value);
+        }
+
+        [TestMethod]
+        public void HundredBillionToText()
+        {
+            var obj = BL.Numbers.Convert<string>("100000000000");
+            var value = obj.ToString();
+
+            Assert.AreEqual("ONE HUNDRED BILLION DOLLARS AND ZERO CENT.", value);
+        }
+
+        [TestMethod]
+        public void TenBillionToText()
+        {
+            var obj = BL.Numbers.Convert<string>("10000000000");
+            var value = obj.ToString();
+
+            Assert.AreEqual("TEN BILLION DOLLARS AND ZERO CENT.", value);
+        }
+
+
+        [TestMethod]
+        public void HundredDollarWithCentsToText()
+        {
+            var obj = BL.Numbers.Convert<string>("252.37");
+            var value = obj.ToString();
+
+            Assert.AreEqual("TWO HUNDRED AND FIFTY-TWO DOLLARS AND THIRTY-SEVEN CENTS.", value);
+        }
+
     }
 }

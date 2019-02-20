@@ -9,7 +9,7 @@ namespace AKQA.BL
     /// <summary>
     /// Contains the list of common text to describe a number.
     /// </summary>
-    public class NumericalStructure:Dictionary<string,int>
+    public class NumericalStructure:Dictionary<string,Int64>
     {
         public NumericalStructure() : base(32)
         {

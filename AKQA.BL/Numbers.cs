@@ -8,7 +8,7 @@ namespace AKQA.BL
 {
     public class Numbers
     {
-        protected readonly IEnumerable<KeyValuePair<string, int>> numericalStructure;
+        protected readonly IEnumerable<KeyValuePair<string, long>> numericalStructure;
         protected readonly string NUMBER_TEXT_APPEND_FORMAT;
         protected readonly string NUMBER_PATTERN;
 
@@ -51,22 +51,30 @@ namespace AKQA.BL
         public override string ToString()
         {
             string[] arr = NumberText.Split('.');
-            int characteristic = int.Parse(arr[0]);
-            int mantissa = arr.Length == 2 ? int.Parse(arr[1]) : 0;
+            long characteristic = long.Parse(arr[0]);
+            long mantissa = arr.Length == 2 ? long.Parse(arr[1]) : 0;
 
-            return ToString(characteristic);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(ToString(characteristic));
+            sb.AppendFormat(" DOLLAR{0} AND ", characteristic>1? "S":"");
+            sb.Append(ToString(mantissa));
+            sb.AppendFormat(" CENT{0}.",mantissa>1?"S":"");
+
+            return sb.ToString();
         }
 
-        protected string ToString(int number)
+        protected string ToString(long number)
         {
             //Get the first number description that has value smaller than the given number.
             var p = numericalStructure.First(n => number >= n.Value);
-            int value = p.Value;
+            long value = p.Value;
             string text = p.Key;
+            
+            if (number == 0) return text;
 
-            int significantPart = number - (number % value);//Get the highest significant portion of the number.
-            int remainder = number - significantPart;//Get the remainder to process later.
-            int mostSignificantNumber = 0;
+            long significantPart = number - (number % value);//Get the highest significant portion of the number.
+            long remainder = number - significantPart;//Get the remainder to process later.
+            long mostSignificantNumber = 0;
             StringBuilder sb = new StringBuilder();
 
             if (significantPart > value || significantPart >= 100)
@@ -93,7 +101,7 @@ namespace AKQA.BL
 
             if (remainder != 0)//if remaining number to convert.
             {
-                if (value == 100)//Add AND text if the number is in the hundreds range. (eg, 360 is THREE HUNDRED AND SIXTY).
+                if (value == 100 ||(value > 100 && remainder < 100))//Add AND text if the number is in the hundreds range. (eg, 360 is THREE HUNDRED AND SIXTY).
                 {
                     sb.Append("AND ");
                 }

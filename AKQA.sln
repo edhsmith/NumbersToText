@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKQA.BL", "AKQA.BL\AKQA.BL.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKQA.Test", "AKQA.Test\AKQA.Test.csproj", "{D2B65B34-5E58-455D-9DF2-20EC25F8F355}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKQA.Web", "AKQA.Web\AKQA.Web.csproj", "{69628BAC-380B-4ACD-80F4-0B330D684223}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{87D8137F-26E3-4152-A3B6-6475EDD447A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{D2B65B34-5E58-455D-9DF2-20EC25F8F355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2B65B34-5E58-455D-9DF2-20EC25F8F355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2B65B34-5E58-455D-9DF2-20EC25F8F355}.Release|Any CPU.Build.0 = Release|Any CPU
-		{69628BAC-380B-4ACD-80F4-0B330D684223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{69628BAC-380B-4ACD-80F4-0B330D684223}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{69628BAC-380B-4ACD-80F4-0B330D684223}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{69628BAC-380B-4ACD-80F4-0B330D684223}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D8137F-26E3-4152-A3B6-6475EDD447A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D8137F-26E3-4152-A3B6-6475EDD447A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D8137F-26E3-4152-A3B6-6475EDD447A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D8137F-26E3-4152-A3B6-6475EDD447A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

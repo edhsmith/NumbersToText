@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="/Script/angular.min.js"></script>
+    <script src="Script/jquery-3.3.1.min.js"></script>
+    <script src="Script/Controller.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="Style/bootstrap-4.2.1-dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div ng-app="AKQA" class="container">
+        <div ng-controller="mainController" ng-form name="myForm">
+            <div class="pt-3">
+                <div class="col col-xs-3 col-sm-3 col-3">Name</div>
+                <div class="row pt-3">
+                    <div class="col col-xs-3 col-sm-5 col-md-5"><input type="text" id="txtName" class="form-control" placeholder="Enter Name" ng-model="enteredName"></div>
+                </div>
+
+            </div>
+            <div class="row pt-3">
+                <div class="col col-xs-3 col-sm-5 col-md-5" >                    
+                    <input type="text" name="txtAmount" class="form-control" placeholder="Enter Amount" ng-model="enteredNumber" ng-pattern="/^\d{1,11}(\.\d{1,2})?$/" ng-class="{'border-danger':myForm.txtAmount.$error.pattern}" ng-change="Load()">
+                </div>
+                <div class="col col-xs-3 col-sm-3 col-3">
+                    <div ng-show="myForm.txtAmount.$error.pattern" class="alert alert-danger p-2">
+                        Invalid Number
+                    </div>
+                </div>            
+            </div>    
+            
+            <div class="row pt-3">
+                <div class="col col-8">       
+                    <p class="card bg-primary text-light text-center">{{enteredName}}<br/>{{numberWords}}</p>                  
+                </div>
+            </div>
+        </div>            
+     </div>
+</body>
+</html>
