@@ -101,7 +101,7 @@ namespace AKQA.BL
 
             if (remainder != 0)//if remaining number to convert.
             {
-                if (value == 100 ||(value > 100 && remainder < 100))//Add AND text if the number is in the hundreds range. (eg, 360 is THREE HUNDRED AND SIXTY).
+                if (value == 100 ||(value > 100 && remainder < 100))//Add AND text if the number is in the hundreds range (eg, 360 is THREE HUNDRED AND SIXTY) and numbers like 1002 (ONE THOUSAND AND TWO) or 1000007 (ONE MILLION AND SEVEN).
                 {
                     sb.Append("AND ");
                 }
